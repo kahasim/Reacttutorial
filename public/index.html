@@ -26,8 +26,15 @@
     -->
     <title>React App</title>
   </head>
-  <body>
+  <body style="background:purple">
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1 id="display" style="color: white;"> Count is 0</h1>
+    <p id="subtitle" style="color: white;">You have clicked 0 times.</p>
+
+    <button id="addBtn">Add one</button>
+    <button id="resetBtn">Reset</button>
+    
+    
     <div id="root"></div>
     <!--
       This HTML file is a template.
@@ -40,4 +47,27 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+  <script>
+      let count = 0
+      let counttotal = 0
+
+      const display = document.getElementById("display")
+      const addbutton = document.getElementById("addBtn")
+      const resetBtn = document.getElementById("resetBtn")
+      const subtitle = document.getElementById("subtitle")
+
+      //event listener
+      addbutton.addEventListener('click', function(){
+        count += 1
+        counttotal += 1
+        display.textContent = "Count is " + count
+        subtitle.textContent = "You have clicked " + counttotal +" times"
+      })
+
+      resetBtn.addEventListener('click', function(){
+        count = 0
+        display.textContent = "Count is " + count
+      })
+
+  </script>
 </html>
